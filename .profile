@@ -31,18 +31,4 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 export SVN_EDITOR=vi
 export GNUTERM='x11'
 
-
-alias sshjoker='ssh -l a9983 joker.nikonoa.net'
-alias sshtwoface='ssh -l a9983 twoface.nikonoa.net'
-alias sshscarecrow='ssh -l a9983 scarecrow.nikonoa.net'
-alias sshmagneto='ssh -l a9983 128.25.202.80'
-alias sshsabretooth='ssh -l a9983 128.25.202.88'
-
-alias sshxjoker='ssh -l a9983 -X joker.nikonoa.net'
-alias sshxtwoface='ssh -l a9983 -X twoface.nikonoa.net'
-alias sshxscarecrow='ssh -l a9983 -X scarecrow.nikonoa.net'
-alias sshxmagneto='ssh -l a9983 -X 128.25.202.80'
-alias sshxsabretooth='ssh -l a9983 -X 128.25.202.88'
-alias sshx='ssh -X'
-
 export PATH="/usr/local/bin:$PATH"
