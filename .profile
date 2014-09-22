@@ -1,9 +1,48 @@
 #proxy setting for nc intra
-source ~/.proxy_intra
+
+if [ $USER = shimizu ] ; then
+    source ~/.proxy_intra;
+fi
+
+if [ -d ~/.theme ] ; then
+    :
+else
+    mkdir .theme
+fi
+
+if [ -d ~/.theme/solarized ] ; then
+    :
+else
+    git clone https://github.com/altercation/solarized.git
+fi
+if [ -d ~/.theme/dircolors-solarized ] ; then
+    :
+else
+    git clone https://github.com/seebi/dircolors-solarized.git
+fi
+
+if brew list  | grep coreutils >/dev/null  ; then
+    eval "$(gdircolors ~/.theme/dircolors-solarized/dircolors.ansi-dark)"
+    alias ls='gls --color=auto'
+else
+    echo "Warning : coreutils is not installed. use freebsd ls instead of gls"
+    alias ls='ls -G'
+fi
+
+
+if [ -d ~/.emacs.d/theme ] ; then
+    :
+else
+    mkdir ~/.emacs.d/theme
+    ln -s ~/.theme/solarized/emacs-colors-solarized ~/.emacs.d/theme
+fi
+
+
 
 alias rm='rm -i'
 alias o='open'
-alias ls='ls -G'
+alias e='emacs'
+
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -28,7 +67,7 @@ export PS1="\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
-export SVN_EDITOR=vi
+export SVN_EDITOR=emacs
 export GNUTERM='x11'
 
 export PATH="/usr/local/bin:$PATH"
