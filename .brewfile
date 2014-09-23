@@ -1,1 +1,31 @@
+# update Homebrew
+update
+ 
+# Add Repository
+# tap homebrew/binary
+# tap phinze/homebrew-cask
+tap homebrew/science
+ 
+# Memo:
 
+install gcc
+install octave --without-docs
+
+install ack
+install binutils
+install coreutils
+install gnu-sed
+install imagemagick
+install wget
+install z
+install nkf
+install git
+install subversion
+install cask
+
+ 
+install x264
+install libgphoto2
+install gphoto2
+install gnuplot
+install dcraw
