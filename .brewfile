@@ -9,7 +9,7 @@ tap homebrew/science
 # Memo:
 
 install gcc
-install octave --without-docs
+install octave --without-docs  --with-x=yes
 
 install ack
 install binutils

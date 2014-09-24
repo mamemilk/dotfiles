@@ -1,11 +1,10 @@
 (require 'cask)
 (cask-initialize)
 
-
 ;; color-theme
-(when (require 'color-theme)
-  (color-theme-initialize)
-  (color-theme-hober))
+;;(when (require 'color-theme)
+;;  (color-theme-initialize)
+;;  (color-theme-hober))
 
 ;; color-theme.el
 ;;(add-to-list 'load-path "~/.emacs.d/theme/emacs-colors-solarized")

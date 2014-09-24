@@ -13,12 +13,12 @@ fi
 if [ -d ~/.theme/solarized ] ; then
     :
 else
-    git clone https://github.com/altercation/solarized.git
+    git clone https://github.com/altercation/solarized.git ~/.theme/
 fi
 if [ -d ~/.theme/dircolors-solarized ] ; then
     :
 else
-    git clone https://github.com/seebi/dircolors-solarized.git
+    git clone https://github.com/seebi/dircolors-solarized.git ~/.theme/
 fi
 
 if brew list  | grep coreutils >/dev/null  ; then
@@ -29,6 +29,11 @@ else
     alias ls='ls -G'
 fi
 
+if [ -d ~/.emacs.d ] ; then
+    :   
+else
+    mkdir ~/.emacs.d
+fi  
 
 if [ -d ~/.emacs.d/theme ] ; then
     :
