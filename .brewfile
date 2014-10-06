@@ -1,16 +1,14 @@
 # update Homebrew
 update
- 
+
 # Add Repository
 # tap homebrew/binary
 # tap phinze/homebrew-cask
 tap homebrew/science
- 
+tap phinze/homebrew-cask
+tap homebrew/versions
+
 # Memo:
-
-install gcc
-install octave --without-docs  --with-x=yes
-
 install ack
 install binutils
 install coreutils
@@ -20,12 +18,27 @@ install wget
 install z
 install nkf
 install git
-install subversion
-install cask
 
- 
+# use mac svn for UTF issue
+# install subversion
+# install subversion17 --unicode-path
+
+install cask
+install vim
+
+install brew-cask
+cask install xquartz
+cask install mactex
+cask install cd-to
+cask install adobe-creative-cloud
+cask install wireshark
+
 install x264
 install libgphoto2
 install gphoto2
-install gnuplot
+install gnuplot --with-x --pdf
+install ghostscript
 install dcraw
+
+install gcc
+install octave --without-docs  --with-x

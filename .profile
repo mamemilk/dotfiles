@@ -1,7 +1,11 @@
 #proxy setting for nc intra
 
 if [ $USER = shimizu ] ; then
-    source ~/.proxy_intra;
+    #if connected to intra
+    source ~/.set_proxy.sh
+
+    #else
+    #source ~/.unset_proxy.sh
 fi
 
 if [ -d ~/.theme ] ; then
@@ -10,15 +14,22 @@ else
     mkdir .theme
 fi
 
-if [ -d ~/.theme/solarized ] ; then
+#if [ -d ~/.theme/solarized ] ; then
+#    :
+#else
+#    git clone https://github.com/altercation/solarized.git ~/.theme/solarized
+#fi
+
+if [ -d ~/.theme/osx-terminal.app-colors-solarized ] ; then
     :
 else
-    git clone https://github.com/altercation/solarized.git ~/.theme/
+    git clone https://github.com/tomislav/osx-terminal.app-colors-solarized.git ~/.theme/osx-terminal.app-colors-solarized
 fi
+
 if [ -d ~/.theme/dircolors-solarized ] ; then
     :
 else
-    git clone https://github.com/seebi/dircolors-solarized.git ~/.theme/
+    git clone https://github.com/seebi/dircolors-solarized.git ~/.theme/dircolors-solarized
 fi
 
 if brew list  | grep coreutils >/dev/null  ; then
@@ -30,18 +41,17 @@ else
 fi
 
 if [ -d ~/.emacs.d ] ; then
-    :   
-else
-    mkdir ~/.emacs.d
-fi  
-
-if [ -d ~/.emacs.d/theme ] ; then
     :
 else
-    mkdir ~/.emacs.d/theme
-    ln -s ~/.theme/solarized/emacs-colors-solarized ~/.emacs.d/theme
+    mkdir ~/.emacs.d
 fi
 
+#if [ -d ~/.emacs.d/theme ] ; then
+#    :
+#else
+#    mkdir ~/.emacs.d/theme
+#    ln -s ~/.theme/solarized/emacs-colors-solarized ~/.emacs.d/theme
+#fi
 
 
 alias rm='rm -i'
@@ -66,13 +76,12 @@ alias sed='gsed'
 
 . `brew --prefix`/etc/profile.d/z.sh
 
-export PATH=$PATH:/Users/shimizu/Programs/ProjectBased/mytools/bin:/Users/shimizu/Programs/ProjectBased/mytools/git/tools/bin
-
 export PS1="\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
-export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
+#export CLICOLOR=1
+#export LSCOLORS=DxGxcxdxCxegedabagacad
 
 export SVN_EDITOR=emacs
 export GNUTERM='x11'
 
+export PATH=$PATH:/Users/shimizu/Programs/ProjectBased/mytools/bin:/Users/shimizu/Programs/ProjectBased/mytools/git/tools/bin
 export PATH="/usr/local/bin:$PATH"
