@@ -31,6 +31,9 @@
 
 (add-hook 'python-mode-hook'(lambda()(hs-minor-mode 1)))
 
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
+
 ;; (define-key global-map (kbd "\C-\\") 'hs-toggle-hiding)
 
 
@@ -87,4 +90,3 @@
 ;;    (color-theme-solarized-dark))
 ;;
 ;;
-
